@@ -1,0 +1,1 @@
+mui.alert("检测到有最新版本 </p>http://gujc.nsjiasu.com网址下载", "更新提示");
