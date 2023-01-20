@@ -1,7 +1,7 @@
 
     	// 设置倒计时的时间
     	
-        var countDownDate = new Date("Jan 21, 2023 00:00:00").getTime();
+        var countDownDate = new Date("Jan 22, 2023 00:00:00").getTime();
 
         // 每秒更新倒计时
         var x = setInterval(function() {
