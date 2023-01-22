@@ -25,7 +25,7 @@
             // 如果时间到了，显示烟花
             if (distance < 0) {
                 clearInterval(x);
-                document.getElementById("countdown").innerHTML = "新春快乐!Happy chinese new year!";
+                document.getElementById("countdown").innerHTML = "Happy chinese new year!";
                 document.getElementById("fireworks").className = "active";
             }
         }, 1000);
