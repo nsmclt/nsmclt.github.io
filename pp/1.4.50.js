@@ -1,1 +1,1 @@
-mui.alert("祝大家新春快乐！", "创海团队");的
+mui.alert("最新版已发布请前往网站更新</p>https://nsmclt.github.io/", "提示");
