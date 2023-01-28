@@ -1,0 +1,145 @@
+@charset "utf-8";
+
+@import url(http://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap);
+
+
+* {
+    margin                     : 0;
+    padding                    : 0;
+    list-style                 : none;
+    text-decoration            : none;
+    user-select                : none;
+    outline                    : none;
+    caret-color                : #607d8b;
+    font-size                  : 10px;
+    font-weight                : initial;
+    font-style                 : initial;
+    font-family                : 'Poppins', 'Microsoft Jhenghei', sans-serif;
+    font-family                : 'JetBrains Mono', 'Microsoft Jhenghei', sans-serif;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+
+*::-ms-reveal {
+    display: none;
+}
+
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
+
+::selection {
+    color      : #FFFFFF;
+    background : #075db3;
+    text-shadow: none;
+}
+
+
+::-webkit-scrollbar {
+    width : 3px;
+    height: 3px;
+}
+
+
+::-webkit-scrollbar-thumb {
+    background: #075db3;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+    background: #9f9f9f;
+}
+
+
+::-webkit-scrollbar-track {
+    width     : 3px;
+    background: #f9f9f9;
+}
+
+
+::placeholder {
+    color: #607d8b;
+}
+
+
+input,
+select {
+    border    : 1px solid #607d8b;
+    height    : 35px;
+    padding   : 0 10px;
+    color     : #607d8b;
+    background: transparent;
+}
+
+
+input[type=submit],
+input[type=button] {
+    cursor: pointer;
+}
+
+
+:root {
+    --black       : #000;
+    --ocean       : #007ab8;
+    --blue        : #007bff;
+    --primary     : #007bff;
+    --hoveerblue  : #0091da;
+    --hoverblue   : #00a0e9;
+    --aqua        : #00c1d5;
+    --dark-blue   : #075db3;
+    --dark-green  : #07c160;
+    --greene      : #0fc70f;
+    --light-blue  : #10aeff;
+    --darker-blue : #1485ee;
+    --cyan        : #17a2b8;
+    --info        : #17a2b8;
+    --indigo      : #1d428a;
+    --darkmode    : #1e2a31;
+    --teal        : #20c997;
+    --bluee       : #2196f3;
+    --black-dark  : #23241f;
+    --green       : #28a745;
+    --success     : #28a745;
+    --gray-dark   : #343a40;
+    --dark        : #343a40;
+    --blue-green  : #495770;
+    --gray        : #565656;
+    --lighter-blue: #576b95;
+    --lighterr    : #5fa134;
+    --pool-green  : #607d8b;
+    --light-purple: #6467f0;
+    --indigoo     : #6610f2;
+    --secondary   : #6c757d;
+    --purple      : #6f42c1;
+    --leaf        : #78be20;
+    --plum        : #7f35b2;
+    --lighter     : #91d300;
+    --light-green : #95ec69;
+    --violet      : #b145e9;
+    --brown-yellow: #c87d2f;
+    --red-bright  : #cc3f68;
+    --red         : #dc3545;
+    --danger      : #dc3545;
+    --pink        : #e83e8c;
+    --bright-red  : #ea3a3a;
+    --pink-bright : #ee6eb3;
+    --orange-red  : #f44336;
+    --lightmode   : #f4f8fa;
+    --lightblue   : #f4f8fa;
+    --light-gray  : #f7f7f7;
+    --light       : #f8f9fa;
+    --cerise-red  : #fa5151;
+    --orange      : #fd7e14;
+    --red-orange  : #ff6a00;
+    --fawn        : #ffa117;
+    --yellow      : #ffc107;
+    --warning     : #ffc107;
+    --dark-orange : #ffc300;
+    --light-orange: #ffebdd;
+    --white       : #fff;
+    --btn-image   : linear-gradient(0deg, #FFF 0, #F3F5F8 100%);
+    --box-shadow  : 8px 8px 20px 0 rgb(55 99 170 / 10%);
+    --border      : 1px solid rgba(73, 87, 112, .2);
+}

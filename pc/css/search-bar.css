@@ -1,0 +1,45 @@
+.mdui-appbar-with-searchbar {
+  padding-top: 64px;
+}
+.search-bar {
+  display: flex;
+  margin: 7px 8px 8px;
+  height: 49px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, .24);
+  background: #FAFAFA;
+  align-items: center;
+  border-radius: 2px;
+}
+.search-bar > input {
+  flex: 1 1;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+  font-family: Roboto;
+  font-size: 14px;
+  line-height: 100%;
+  margin: 0 16px;
+  outline: none;
+  color: rgba(0, 0, 0, .87);
+}
+.search-bar > input::placeholder {
+  color: rgba(0, 0, 0, .54);
+}
+.search-bar > .mdui-icon {
+  margin: 0 16px;
+}
+.search-bar > .mdui-btn-icon {
+  margin: auto 11px;
+}
+/*暗色模式支持*/
+.mdui-theme-layout-dark .search-bar {
+  background: #424242;
+}
+.mdui-theme-layout-dark .search-bar > input {
+  color: white;
+}
+.mdui-theme-layout-dark .search-bar > input::placeholder {
+  color: rgba(255, 255, 255, .70);
+}
