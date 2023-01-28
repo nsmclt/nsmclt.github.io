@@ -1,0 +1,37 @@
+
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>春节倒计时</title>
+    <script type="text/javascript">
+        // 设置春节的时间
+        var target_date = new Date("Feb 5, 2023").getTime();
+        // 每秒执行一次
+        var interval = setInterval(function () {
+            // 获取当前时间
+            var current_date = new Date().getTime();
+            // 获取时间差
+            var difference = target_date - current_date;
+            // 计算天数
+            var days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            // 计算小时数
+            var hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            // 计算分钟数
+            var minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            // 计算秒数
+            var seconds = Math.floor((difference % (1000 * 60)) / 1000);
+            // 显示倒计时
+            document.getElementById("countdown").innerHTML = days + "天" + hours + "时" + minutes + "分" + seconds + "秒";
+            // 如果时间差小于0，则停止倒计时
+            if (difference < 0) {
+                clearInterval(interval);
+                document.getElementById("countdown").innerHTML = "春节到了！";
+            }
+        }, 1000);
+    </script>
+</head>
+<body>
+    <div>距离春节还有：<span id="countdown"></span></div>
+</body>
+</html>
