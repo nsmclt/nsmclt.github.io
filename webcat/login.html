@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" />
+		<meta name="renderer" content="webkit" />
+		<meta name="force-rendering" content="webkit" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<title>WebCat登录</title>
+		<link rel="stylesheet" href="http://space.webcat.top/css/mdui.min.css" />
+		<link rel="stylesheet" href="http://space.webcat.top/css/search-bar.css" />
+		<script src="http://space.webcat.top/js/jquery.min.js"></script>
+	</head>
+	<body class="mdui-appbar-with-toolbar mdui-theme-primary-indigo mdui-theme-accent-pink">
+		<div class="mdui-appbar mdui-appbar-fixed mdui-shadow-0">
+			<div class="mdui-toolbar mdui-color-white">
+				<a href="javascript: end();" class="mdui-btn mdui-btn-icon mdui-ripple">
+					<i class="mdui-icon material-icons">arrow_back</i>
+				</a>
+				<span class="mdui-typo-title">登录</span>
+			</div>
+		</div>
+
+		<div style="padding: 30px;">
+			<!-- 浮动标签、多行文本框 -->
+			<div id="usernameDiv" class="mdui-textfield mdui-textfield-floating-label">
+				<i class="mdui-icon material-icons">account_circle</i>
+				<label class="mdui-textfield-label">用户名(q议英文)</label>
+				<input id="username" class="mdui-textfield-input" maxlength="18" required />
+			</div>
+
+			<!-- 禁用状态 -->
+			<div id="passwordDiv" class="mdui-textfield mdui-textfield-floating-label">
+				<i class="mdui-icon material-icons">lock</i>
+				<label class="mdui-textfield-label">密码</label>
+				<input id="password" type="password" class="mdui-textfield-input"  pattern="^.*(?=.{6,}).*$" required />
+				<div class="mdui-textfield-error">密码至少 6 位，且包含字母</div>
+			</div>
+			
+			<!-- 禁用状态 -->
+			<div id="password2Div" class="mdui-textfield mdui-textfield-floating-label" style="display: none;">
+				<i class="mdui-icon material-icons">lock</i>
+				<label class="mdui-textfield-label">确认密码</label>
+				<input id="password2" type="password" class="mdui-textfield-input" required />
+			</div>
+		</div>
+		<div class="mdui-col" style="padding: 30px;">
+			<button id="loginButton" onclick="login();" class="mdui-btn mdui-btn-block mdui-color-theme-accent mdui-ripple">登录</button>
+			<div id="regText" style="margin-top: 30px; text-align:right">
+				没有账号？
+				<a href="javascript: toReg();" class="mdui-text-color-blue-600"><mark>注册一个</mark></a>
+			</div>
+		</div>
+			
+		
+		<script src="http://space.webcat.top/js/mdui.min.js"></script>
+		<script>
+		    var isDark = localStorage.isDark;
+		    var version = localStorage.version;
+			if(isDark == "true") {
+		    	$("body").addClass("mdui-theme-layout-dark");
+		    }
+		    
+			var type = "login";
+			
+			function toReg() {
+				type = "reg";
+				$("#password2Div").css("display", "block");
+				$("#regText").css("display", "none");
+				$("#loginButton").text("注册");
+			}
+			
+			function login() {
+				var username = $("#username").val();
+				var password = $("#password").val();
+				if (username == "" || password == "") {
+					mdui.alert("请输入完整");
+					return;
+				}
+				if (username.length < 5) {
+					mdui.alert("用户名最少 5 位");
+					return;
+				}
+				if (password.length < 6) {
+					mdui.alert("密码最少 6 位");
+					return;
+				}
+				if(type == "reg") {
+					var password2 = $("#password2").val();
+					if(password != password2) {
+						mdui.alert("两次密码输入不一致");
+						return;
+					}
+				}
+				if(type == "reg") {
+					var loginUrl = "http://source.webcat.top/user/register";
+				} else {
+					var loginUrl = "http://source.webcat.top/user/login";
+				}
+				$.ajax({
+					url: loginUrl,
+					type: "POST",
+					data: {
+						"username": username,
+						"password": password
+					},
+					async: true,
+					success(data) {
+						if (data.success) {
+							localStorage.authInfo = JSON.stringify(data.data);
+							var url = "index1.html";
+							if(version == "5.21") {		
+							    iapp.fn('source.showDetail("' + url + '")');	
+    					     	iapp.fn('webcat.exit()');    					     	
+    					     	return;
+    					    }
+							window.location.href = "fufgu.html?appVersion" + version + "&isDark=" + isDark;
+						} else {
+							mdui.alert(data.message);
+						}
+					}
+				});
+			}
+			
+			function end() {
+				if(version == "5.21") {
+					iapp.fn('webcat.exit()');
+			        return;
+			    }					
+				window.history.back();
+			}
+		</script>
+	</body>
+</html>
