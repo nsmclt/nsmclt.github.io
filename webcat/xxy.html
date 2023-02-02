@@ -1,0 +1,212 @@
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" />
+		<meta name="renderer" content="webkit" />
+		<meta name="force-rendering" content="webkit" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<title>免费共享空间</title>
+		<link rel="stylesheet" href="http://space.webcat.top/css/mdui.min.css" />
+		<script src="http://space.webcat.top/js/jquery.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+	</head>
+	<body class="mdui-appbar-with-toolbar" >
+		<div id="el">
+	
+			<div>
+				<table style="height: 100px; width: 100%; margin-top: 10px; ">
+					<tr style="height: 30px;">
+						<td rowspan="3" style="width: 120px;">
+							<div class="mdui-valign mdui-center" style="height: 100px; width: 100px;">
+								<img :src="[detailInfo.iconUrl + '?imageMogr2/format/webp']" class="mdui-center" style="object-fit: cover; width: 90%; height: 90%; border-radius: 20px" onerror="onerror=null;src='../img/appIcon.png'"/>
+							</div>
+						</td>
+						<td>
+							<span style="font-size: 18px;" class="mdui-color-theme">{{detailInfo.name}}</span>
+						</td>
+						<td rowspan="3" style="width: 70px;">
+							<button @click="download(detailInfo.id, detailInfo.name);" class="mdui-btn mdui-btn-icon mdui-color-pink-400 mdui-ripple">
+							  <i class="mdui-icon material-icons">arrow_downward</i>
+							</button>
+						</td>
+					</tr>
+					<tr style="height: 20px;">
+						<td>
+							<span style="font-size: 16px;" class="mdui-text-color-theme-secondary">{{detailInfo.packageName}}</span>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div class="mdui-chip" @click="toUserSourceList(detailInfo.nickName, detailInfo.userId)">
+								<span class="mdui-chip-icon mdui-color-blue">
+							      <i class="mdui-icon material-icons">face</i>
+							    </span>
+							  <span class="mdui-chip-title">{{detailInfo.nickName == null ? '匿名用户':detailInfo.nickName}}</span>
+							</div>
+						</td>
+					</tr>
+				</table>
+				
+				<div class="mdui-row-xs-2" style="margin-top: 12px; margin-left: 12px; margin-right: 12px; background-color: #eee; border-radius: 20px; padding: 3px;">
+					<div class="mdui-col" @click="showDetail(item.id);" v-for="imgUrl in imgUrls" style="padding: 5px;">
+						<div class="mdui-grid-tile" >
+							<img :src="[imgUrl + '?imageMogr2/format/webp']" class="mdui-img-rounded" style="height: 330px; object-fit: cover; border-radius: 20px; "/>
+						</div>
+					</div>
+				</div>
+				
+				<div style="margin-left: 15px; margin-right: 15px; margin-top: 20px;">
+					<div style="font-size: 20px; color: #42A5F5;">源码介绍</div>
+					<div style="margin-top: 10px; word-wrap:break-word; font-size: 16px; line-height: 22px;" class="mdui-text-color-theme-secondary">
+						{{detailInfo.content}}
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+        
+		<div class="mdui-dialog" id="showUserInfoDiv">
+			
+		</div>
+		
+		<script src="http://space.webcat.top/js/mdui.min.js"></script>
+		<script type="text/javascript">
+    		var isDark = localStorage.isDark;
+    		var version = localStorage.version;
+    		if(isDark == "true") {
+		    	$("body").addClass("mdui-theme-layout-dark");
+		    }
+			
+			
+			var authInfoStr = localStorage.authInfo;
+			if (authInfoStr != null) {
+				var authInfo = JSON.parse(authInfoStr);
+				var token = authInfo.token;
+			}
+			
+			var vue = new Vue({
+				el: "#el",
+				data: {
+					detailInfo: {},
+					imgUrls: [],
+					authInfo: authInfo
+				},
+				methods: {
+					getDetail(id) {
+						$.ajax({
+							url: "http://source.webcat.top/source/querySourceCodeById",
+							type: "GET",
+							data: {
+								"id": id
+							},
+							async: true,
+							success(data) {
+								if (data.success) {
+									vue.detailInfo = data.data;
+									vue.imgUrls = JSON.parse(data.data.imgUrls);
+								}
+							}
+						});
+					},
+					end() {
+					    if(version == "5.21") {
+					        iapp.fn('source.end()');
+					        return;
+					    }					
+						window.history.back();
+					},
+					delete() {
+						let id = this.detailInfo.id;
+						mdui.dialog({
+						  title: '删除',
+						  content: '确定要删除当前源码吗？',
+						  buttons: [
+						    {
+						      text: '取消'
+						    },
+						    {
+						      text: '确认',
+						      onClick: function(inst){
+						        $.ajax({
+						        	url: "http://source.webcat.top/source/deleteSourceCode",
+						        	type: "POST",
+						        	data: {
+						        		"id": id,
+						        		"token": token
+						        	},
+						        	async: true,
+						        	success(data) {
+						        		if(data.success) {
+						        			mdui.alert("操作成功");
+						        		} else {
+						        			mdui.alert(data.message);
+						        		}
+						        	}
+						        });
+						      }
+						    }
+						  ]
+						});
+					},
+					download(id, appName) {
+					
+						$.ajax({
+							url: "http://source.webcat.top/source/querySourceUrlById",
+							type: "GET",
+							data: {
+								"id": id,
+								"token": token
+							},
+							async: true,
+							success(data) {
+								if (data.success) {
+									mdui.alert("data.message");
+									if(data.code == 6666) {
+										var info = data.data;
+										var fileUrl = info.fileUrl;
+										iapp.fn('source.hdSource("' + fileUrl + '","' + appName + '");');
+									}
+								}
+							}
+						});
+					},
+					showUserInfo() {
+						// var inst = new mdui.Dialog('#showUserInfoDiv');
+						// inst.open();
+					},
+					toUserSourceList(uname, uid) {
+						if(uid != null) {
+							var url = "my_source.html?uname=" + uname + "&uid=" + uid;
+							if (version == "5.21") {
+								iapp.fn('source.showDetail("' + url + '")');
+								return;
+							}
+							window.location.href = url;
+							return;
+						}
+					}
+				}
+			});
+			
+			var id = getQueryVariable("id");
+			vue.getDetail(id == false ? 10:id);
+
+
+			function getQueryVariable(variable) {
+				var query = window.location.search.substring(1);
+				var vars = query.split("&");
+				for (var i = 0; i < vars.length; i++) {
+				 var pair = vars[i].split("=");
+					if (pair[0] == variable) {
+						return pair[1];
+					}
+				}
+				return (false);
+			}
+		</script>
+	</body>
+</html>
