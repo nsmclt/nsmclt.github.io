@@ -1,1 +1,1 @@
-mui.alert("欢迎使用本软件! </p>交流群737977468", "提示");
+mui.alert("最新版已发布请前往网站更新</p>https://nsmclt.github.io/", "提示");
