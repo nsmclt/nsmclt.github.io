@@ -9,7 +9,7 @@ mui.alert("最新版已发布请前往网站更新</p>https://nsmclt.github.io/"
 
        <div style="width: 63vw; margin-left:calc(50% - 50vw);margin-right: calc(50% - 50vw);margin: 0 auto;font-size:12px;transform:translate(0px,-5px);">
 
-       感谢您使用GJ-C,以下为用户交流群(点击复制)
+       感谢您使用GJ-C,以下为用户交流群,欢迎加入!
 
        <p onclick="copyText('724469660')" style="size-font:12px">一群:724469660</p>
 
