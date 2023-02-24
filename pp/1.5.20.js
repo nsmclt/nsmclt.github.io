@@ -6,7 +6,7 @@ mui.alert("最新版已发布请前往网站更新</p>https://nsmclt.github.io/"
     <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -65%);width: 70vw; margin-left:calc(50% - 50vw);margin-right: calc(50% - 50vw);margin: 0 auto; height: 205px; background-color: #ffffff; padding: 10px;border-radius:12px;">
        <p style="text-align:center;transform:translate(0px,-6px);">提示</p>
        <div style="width: 63vw; margin-left:calc(50% - 50vw);margin-right: calc(50% - 50vw);margin: 0 auto;font-size:12px;transform:translate(0px,-5px);">
-       感谢您使用GJ-C,以下为用户交流群(点击复制)
+       感谢您使用GJ-C,以下为用户交流群,
        <p onclick="copyText('724469660')" style="size-font:12px">一群:724469660</p>
        <p onclick="copyText('737977468')" style="size-font:12px;transform:translate(0px,-10px);">二群:737977468</p>
        
