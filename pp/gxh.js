@@ -1,2 +1,2 @@
-var zx = '1.5.72';
-document.getElementById('popu1').innerHTML = zx;
+var gx = '版本:1.5.72';
+document.getElementById('zx').innerHTML = gx;
