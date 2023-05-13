@@ -28,11 +28,24 @@ var p2 = `
    <p style="transform:translate(13px,0px);font-size:13px;font-weight: bold;color:#333;">托更永远至上 </p>
    <p style="transform:translate(15px,0px);font-size:13px;font-weight: ;color:#666;"> @GJ-C · 下载</p>
    </div>
+   
+
    <div class="nr">
-   已为您整理出鸡岩版和Java版的下载链接</p>
+
+   鸡岩版Java版免费下载</p>
+
    <a href="https://xz.klpbbs.net/" style="font-weight: bold;color:#1e9fff">苦力怕鸡岩全版本下载</a></p>
+
    <a href="https://ci.huangyuhui.net/job/HMCL/" style="font-weight: bold;color:#1e9fff">HMCL启动器下载</a></p>
+
    <a href="https://ltcat.lanzoum.com/ia4ff0rbi28h/" style="font-weight: bold;color:#1e9fff">PCL启动器下载</a></p>
+
+   <a href="https://www.123pan.com/s/CcrUVv-1GQAA.html" style="font-weight: bold;color:#1e9fff">PojavLauncher启动器下载(手机游玩Java)</a></p>
+
+   <a href="https://www.123pan.com/s/CcrUVv-4GQAA.html" style="font-weight: bold;color:#1e9fff">澪ultimate启动器下载(手机游玩Java)</a></p><br>
+
+   <p style="background-color:red;width:126px;font-weight: bold;color:#fff;">仅供体验，支持正版</p>
+
    </div>
    <div style="width:100%;height:0.6px;background-color:#eee;"><div>
 
