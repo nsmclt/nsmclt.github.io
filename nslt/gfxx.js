@@ -142,6 +142,28 @@ var p2 = `
 
    <p style="transform:translate(13px,0px);font-size:13px;font-weight: bold;color:#333;">托更永远至上 </p>
 
+   <p style="transform:translate(15px,0px);font-size:13px;font-weight: ;color:#666;"> @GJ-C · 2023年5月20日</p>
+
+   </div>
+
+   <div class="nr">
+
+   祝大家520快乐！
+
+   </div>
+
+   <div style="width:100%;height:0.6px;background-color:#eee;"><div>
+
+   <br>
+
+  <div class="container">
+
+   <div class="tx">
+
+   </div>
+
+   <p style="transform:translate(13px,0px);font-size:13px;font-weight: bold;color:#333;">托更永远至上 </p>
+
    <p style="transform:translate(15px,0px);font-size:13px;font-weight: ;color:#666;"> @GJ-C · 2023年5月14日</p>
 
    </div>
