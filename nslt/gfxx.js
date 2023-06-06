@@ -1,4 +1,4 @@
-    function showPage(pageName) {
+        function showPage(pageName) {
 
       var pages = document.querySelectorAll('.page-container');
 
@@ -67,6 +67,7 @@ var p2 = `
    <a href="https://www.123pan.com/s/CcrUVv-1GQAA.html" style="font-weight: bold;color:#1e9fff">PojavLauncher启动器下载(手机游玩Java)</a></p>
 
    <a href="https://www.123pan.com/s/CcrUVv-4GQAA.html" style="font-weight: bold;color:#1e9fff">澪ultimate启动器下载(手机游玩Java)</a></p><br>
+
    <a href="https://nsmclt.github.io/official.html?" style="font-weight: bold;color:#1e9fff">作者软件，感兴趣的可以下载一下~</a>
 
    <p style="background-color:red;width:126px;font-weight: bold;color:#fff;">仅供体验，支持正版</p>
@@ -92,7 +93,9 @@ var p2 = `
    </div>
 
    <div class="nr">
-   <p>作者小说，支持一下呗</p>
+
+   作者小说，支持一下呗</p>
+
    <a href="https://nsmclt.github.io/zszq/" style="font-weight: bold;color:#1e9fff">https://nsmclt.github.io/zszq/ 转生之桥阅读</a>
 
    </div>
@@ -143,7 +146,29 @@ var p2 = `
 
    <p style="transform:translate(13px,0px);font-size:13px;font-weight: bold;color:#333;">托更永远至上 </p>
 
-   <p style="transform:translate(15px,0px);font-size:13px;font-weight: ;color:#666;"> @GJ-C · 2023年5月20日</p>
+   <p style="transform:translate(15px,0px);font-size:13px;font-weight: ;color:#666;"> @GJ-C · 2023年6月6日</p>
+
+   </div>
+
+   <div class="nr">
+
+   祝所有参加高(中)考的考生金榜题名！
+
+   </div>
+
+   <div style="width:100%;height:0.6px;background-color:#eee;"><div>
+
+   <br>
+
+  <div class="container">
+
+   <div class="tx">
+
+   </div>
+
+   <p style="transform:translate(13px,0px);font-size:13px;font-weight: bold;color:#333;">托更永远至上 </p>
+
+   <p style="transform:translate(15px,0px);font-size:13px;font-weight: ;color:#666;"> @GJ-C · 2023年5月14日</p>
 
    </div>
 
