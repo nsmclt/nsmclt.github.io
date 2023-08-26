@@ -39,3 +39,21 @@
    `;
    document.getElementById("yx").innerHTML = yx;
    
+   
+   
+   document.getElementById("jcgx").innerHTML = `
+   
+    <div onclick="jcys()" style="background: url('./img/caos.png');background-size:90%;border-radius:7px; box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);width:86%;height:29px;text-align:center;margin:0 auto;">
+      <p style="transform:translate(0px,6px);font-size:15px;">检查更新</p>
+    </div>
+   `;
+   
+   
+     function jcys(){
+       wc.alert("已是最新版本");
+     }
+        
+     function jc(){
+       wc.alert("检查到最新版本");
+     }
+   
