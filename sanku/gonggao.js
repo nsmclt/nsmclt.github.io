@@ -4,7 +4,8 @@
     
     <p style="transform:translate(0px,8px);">公告</p>
     <p style="font-size:15px;">SANKU是GJ-C的子版本</p>
-    <p style="font-size:15px;">看什么看</p>
+    <p style="font-size:15px;">开发这么个软件并不难</p>
+    <p style="font-size:15px;">他妈的难的是离线变在线</p>
    `;
    document.getElementById("gonggao").innerHTML = gonggao;
    
