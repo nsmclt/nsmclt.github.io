@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>《在世界线的尽头等着你》临时阅读站点</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <div class="reader-container">
+        <div class="chapter-title" id="chapter-title"></div>
+        <div class="chapter-controls">
+            <button id="prev-chapter-btn" disabled>上一章</button>
+            <span id="chapter-indicator">第1章/共1章</span>
+            <button id="next-chapter-btn" disabled>下一章</button>
+        </div>
+        <div class="content-container">
+            <div class="page active" id="page1"></div>
+            <div class="page" id="page2"></div>
+        </div>
+        <div class="navigation">
+            <button id="prev-btn" disabled>上一页</button>
+            <span class="page-indicator">第 <span id="current-page">1</span> 页 / 共 <span id="total-pages">1</span> 页</span>
+            <button id="next-btn">下一页</button>
+        </div>
+    </div>
+
+    <script src="./js/app.js"></script>
+</body>
+</html>
